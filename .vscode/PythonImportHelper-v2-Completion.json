@@ -1,0 +1,550 @@
+[
+    {
+        "label": "FlaskForm",
+        "importPath": "flask_wtf",
+        "description": "flask_wtf",
+        "isExtraImport": true,
+        "detail": "flask_wtf",
+        "documentation": {}
+    },
+    {
+        "label": "StringField",
+        "importPath": "wtforms",
+        "description": "wtforms",
+        "isExtraImport": true,
+        "detail": "wtforms",
+        "documentation": {}
+    },
+    {
+        "label": "PasswordField",
+        "importPath": "wtforms",
+        "description": "wtforms",
+        "isExtraImport": true,
+        "detail": "wtforms",
+        "documentation": {}
+    },
+    {
+        "label": "Email",
+        "importPath": "wtforms.validators",
+        "description": "wtforms.validators",
+        "isExtraImport": true,
+        "detail": "wtforms.validators",
+        "documentation": {}
+    },
+    {
+        "label": "DataRequired",
+        "importPath": "wtforms.validators",
+        "description": "wtforms.validators",
+        "isExtraImport": true,
+        "detail": "wtforms.validators",
+        "documentation": {}
+    },
+    {
+        "label": "UserMixin",
+        "importPath": "flask_login",
+        "description": "flask_login",
+        "isExtraImport": true,
+        "detail": "flask_login",
+        "documentation": {}
+    },
+    {
+        "label": "current_user",
+        "importPath": "flask_login",
+        "description": "flask_login",
+        "isExtraImport": true,
+        "detail": "flask_login",
+        "documentation": {}
+    },
+    {
+        "label": "login_user",
+        "importPath": "flask_login",
+        "description": "flask_login",
+        "isExtraImport": true,
+        "detail": "flask_login",
+        "documentation": {}
+    },
+    {
+        "label": "logout_user",
+        "importPath": "flask_login",
+        "description": "flask_login",
+        "isExtraImport": true,
+        "detail": "flask_login",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "flask_login",
+        "description": "flask_login",
+        "isExtraImport": true,
+        "detail": "flask_login",
+        "documentation": {}
+    },
+    {
+        "label": "relationship",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "OAuthConsumerMixin",
+        "importPath": "flask_dance.consumer.storage.sqla",
+        "description": "flask_dance.consumer.storage.sqla",
+        "isExtraImport": true,
+        "detail": "flask_dance.consumer.storage.sqla",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "importPath": "apps",
+        "description": "apps",
+        "isExtraImport": true,
+        "detail": "apps",
+        "documentation": {}
+    },
+    {
+        "label": "login_manager",
+        "importPath": "apps",
+        "description": "apps",
+        "isExtraImport": true,
+        "detail": "apps",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "importPath": "apps",
+        "description": "apps",
+        "isExtraImport": true,
+        "detail": "apps",
+        "documentation": {}
+    },
+    {
+        "label": "login_manager",
+        "importPath": "apps",
+        "description": "apps",
+        "isExtraImport": true,
+        "detail": "apps",
+        "documentation": {}
+    },
+    {
+        "label": "create_app",
+        "importPath": "apps",
+        "description": "apps",
+        "isExtraImport": true,
+        "detail": "apps",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "importPath": "apps",
+        "description": "apps",
+        "isExtraImport": true,
+        "detail": "apps",
+        "documentation": {}
+    },
+    {
+        "label": "hash_pass",
+        "importPath": "apps.authentication.util",
+        "description": "apps.authentication.util",
+        "isExtraImport": true,
+        "detail": "apps.authentication.util",
+        "documentation": {}
+    },
+    {
+        "label": "verify_pass",
+        "importPath": "apps.authentication.util",
+        "description": "apps.authentication.util",
+        "isExtraImport": true,
+        "detail": "apps.authentication.util",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "url_for",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "github",
+        "importPath": "flask_dance.contrib.github",
+        "description": "flask_dance.contrib.github",
+        "isExtraImport": true,
+        "detail": "flask_dance.contrib.github",
+        "documentation": {}
+    },
+    {
+        "label": "blueprint",
+        "importPath": "apps.authentication",
+        "description": "apps.authentication",
+        "isExtraImport": true,
+        "detail": "apps.authentication",
+        "documentation": {}
+    },
+    {
+        "label": "LoginForm",
+        "importPath": "apps.authentication.forms",
+        "description": "apps.authentication.forms",
+        "isExtraImport": true,
+        "detail": "apps.authentication.forms",
+        "documentation": {}
+    },
+    {
+        "label": "CreateAccountForm",
+        "importPath": "apps.authentication.forms",
+        "description": "apps.authentication.forms",
+        "isExtraImport": true,
+        "detail": "apps.authentication.forms",
+        "documentation": {}
+    },
+    {
+        "label": "Users",
+        "importPath": "apps.authentication.models",
+        "description": "apps.authentication.models",
+        "isExtraImport": true,
+        "detail": "apps.authentication.models",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "hashlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "hashlib",
+        "description": "hashlib",
+        "detail": "hashlib",
+        "documentation": {}
+    },
+    {
+        "label": "binascii",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "binascii",
+        "description": "binascii",
+        "detail": "binascii",
+        "documentation": {}
+    },
+    {
+        "label": "blueprint",
+        "importPath": "apps.home",
+        "description": "apps.home",
+        "isExtraImport": true,
+        "detail": "apps.home",
+        "documentation": {}
+    },
+    {
+        "label": "TemplateNotFound",
+        "importPath": "jinja2",
+        "description": "jinja2",
+        "isExtraImport": true,
+        "detail": "jinja2",
+        "documentation": {}
+    },
+    {
+        "label": "Migrate",
+        "importPath": "flask_migrate",
+        "description": "flask_migrate",
+        "isExtraImport": true,
+        "detail": "flask_migrate",
+        "documentation": {}
+    },
+    {
+        "label": "exit",
+        "importPath": "sys",
+        "description": "sys",
+        "isExtraImport": true,
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "config_dict",
+        "importPath": "apps.config",
+        "description": "apps.config",
+        "isExtraImport": true,
+        "detail": "apps.config",
+        "documentation": {}
+    },
+    {
+        "label": "LoginForm",
+        "kind": 6,
+        "importPath": "apps.authentication.forms",
+        "description": "apps.authentication.forms",
+        "peekOfCode": "class LoginForm(FlaskForm):\n    username = StringField('Username',\n                         id='username_login',\n                         validators=[DataRequired()])\n    password = PasswordField('Password',\n                             id='pwd_login',\n                             validators=[DataRequired()])\nclass CreateAccountForm(FlaskForm):\n    username = StringField('Username',\n                         id='username_create',",
+        "detail": "apps.authentication.forms",
+        "documentation": {}
+    },
+    {
+        "label": "CreateAccountForm",
+        "kind": 6,
+        "importPath": "apps.authentication.forms",
+        "description": "apps.authentication.forms",
+        "peekOfCode": "class CreateAccountForm(FlaskForm):\n    username = StringField('Username',\n                         id='username_create',\n                         validators=[DataRequired()])\n    email = StringField('Email',\n                      id='email_create',\n                      validators=[DataRequired(), Email()])\n    password = PasswordField('Password',\n                             id='pwd_create',\n                             validators=[DataRequired()])",
+        "detail": "apps.authentication.forms",
+        "documentation": {}
+    },
+    {
+        "label": "Users",
+        "kind": 6,
+        "importPath": "apps.authentication.models",
+        "description": "apps.authentication.models",
+        "peekOfCode": "class Users(db.Model, UserMixin):\n    __tablename__ = 'Users'\n    id            = db.Column(db.Integer, primary_key=True)\n    username      = db.Column(db.String(64), unique=True)\n    email         = db.Column(db.String(64), unique=True)\n    password      = db.Column(db.LargeBinary)\n    def __init__(self, **kwargs):\n        for property, value in kwargs.items():\n            # depending on whether value is an iterable or not, we must\n            # unpack it's value (when **kwargs is request.form, some values",
+        "detail": "apps.authentication.models",
+        "documentation": {}
+    },
+    {
+        "label": "user_loader",
+        "kind": 2,
+        "importPath": "apps.authentication.models",
+        "description": "apps.authentication.models",
+        "peekOfCode": "def user_loader(id):\n    return Users.query.filter_by(id=id).first()\n@login_manager.request_loader\ndef request_loader(request):\n    username = request.form.get('username')\n    user = Users.query.filter_by(username=username).first()\n    return user if user else None",
+        "detail": "apps.authentication.models",
+        "documentation": {}
+    },
+    {
+        "label": "request_loader",
+        "kind": 2,
+        "importPath": "apps.authentication.models",
+        "description": "apps.authentication.models",
+        "peekOfCode": "def request_loader(request):\n    username = request.form.get('username')\n    user = Users.query.filter_by(username=username).first()\n    return user if user else None",
+        "detail": "apps.authentication.models",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "kind": 2,
+        "importPath": "apps.authentication.routes",
+        "description": "apps.authentication.routes",
+        "peekOfCode": "def login():\n    login_form = LoginForm(request.form)\n    if 'login' in request.form:\n        # read form data\n        username = request.form['username']\n        password = request.form['password']\n        # Locate user\n        user = Users.query.filter_by(username=username).first()\n        # Check the password\n        if user and verify_pass(password, user.password):",
+        "detail": "apps.authentication.routes",
+        "documentation": {}
+    },
+    {
+        "label": "register",
+        "kind": 2,
+        "importPath": "apps.authentication.routes",
+        "description": "apps.authentication.routes",
+        "peekOfCode": "def register():\n    create_account_form = CreateAccountForm(request.form)\n    if 'register' in request.form:\n        username = request.form['username']\n        email = request.form['email']\n        # Check usename exists\n        user = Users.query.filter_by(username=username).first()\n        if user:\n            return render_template('accounts/register.html',\n                                   msg='Username already registered',",
+        "detail": "apps.authentication.routes",
+        "documentation": {}
+    },
+    {
+        "label": "logout",
+        "kind": 2,
+        "importPath": "apps.authentication.routes",
+        "description": "apps.authentication.routes",
+        "peekOfCode": "def logout():\n    logout_user()\n    return redirect(url_for('authentication_blueprint.login'))\n# Errors\n@login_manager.unauthorized_handler\ndef unauthorized_handler():\n    return render_template('home/page-403.html'), 403\n@blueprint.errorhandler(403)\ndef access_forbidden(error):\n    return render_template('home/page-403.html'), 403",
+        "detail": "apps.authentication.routes",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_handler",
+        "kind": 2,
+        "importPath": "apps.authentication.routes",
+        "description": "apps.authentication.routes",
+        "peekOfCode": "def unauthorized_handler():\n    return render_template('home/page-403.html'), 403\n@blueprint.errorhandler(403)\ndef access_forbidden(error):\n    return render_template('home/page-403.html'), 403\n@blueprint.errorhandler(404)\ndef not_found_error(error):\n    return render_template('home/page-404.html'), 404\n@blueprint.errorhandler(500)\ndef internal_error(error):",
+        "detail": "apps.authentication.routes",
+        "documentation": {}
+    },
+    {
+        "label": "access_forbidden",
+        "kind": 2,
+        "importPath": "apps.authentication.routes",
+        "description": "apps.authentication.routes",
+        "peekOfCode": "def access_forbidden(error):\n    return render_template('home/page-403.html'), 403\n@blueprint.errorhandler(404)\ndef not_found_error(error):\n    return render_template('home/page-404.html'), 404\n@blueprint.errorhandler(500)\ndef internal_error(error):\n    return render_template('home/page-500.html'), 500",
+        "detail": "apps.authentication.routes",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_error",
+        "kind": 2,
+        "importPath": "apps.authentication.routes",
+        "description": "apps.authentication.routes",
+        "peekOfCode": "def not_found_error(error):\n    return render_template('home/page-404.html'), 404\n@blueprint.errorhandler(500)\ndef internal_error(error):\n    return render_template('home/page-500.html'), 500",
+        "detail": "apps.authentication.routes",
+        "documentation": {}
+    },
+    {
+        "label": "internal_error",
+        "kind": 2,
+        "importPath": "apps.authentication.routes",
+        "description": "apps.authentication.routes",
+        "peekOfCode": "def internal_error(error):\n    return render_template('home/page-500.html'), 500",
+        "detail": "apps.authentication.routes",
+        "documentation": {}
+    },
+    {
+        "label": "hash_pass",
+        "kind": 2,
+        "importPath": "apps.authentication.util",
+        "description": "apps.authentication.util",
+        "peekOfCode": "def hash_pass(password):\n    \"\"\"Hash a password for storing.\"\"\"\n    salt = hashlib.sha256(os.urandom(60)).hexdigest().encode('ascii')\n    pwdhash = hashlib.pbkdf2_hmac('sha512', password.encode('utf-8'),\n                                  salt, 100000)\n    pwdhash = binascii.hexlify(pwdhash)\n    return (salt + pwdhash)  # return bytes\ndef verify_pass(provided_password, stored_password):\n    \"\"\"Verify a stored password against one provided by user\"\"\"\n    stored_password = stored_password.decode('ascii')",
+        "detail": "apps.authentication.util",
+        "documentation": {}
+    },
+    {
+        "label": "verify_pass",
+        "kind": 2,
+        "importPath": "apps.authentication.util",
+        "description": "apps.authentication.util",
+        "peekOfCode": "def verify_pass(provided_password, stored_password):\n    \"\"\"Verify a stored password against one provided by user\"\"\"\n    stored_password = stored_password.decode('ascii')\n    salt = stored_password[:64]\n    stored_password = stored_password[64:]\n    pwdhash = hashlib.pbkdf2_hmac('sha512',\n                                  provided_password.encode('utf-8'),\n                                  salt.encode('ascii'),\n                                  100000)\n    pwdhash = binascii.hexlify(pwdhash).decode('ascii')",
+        "detail": "apps.authentication.util",
+        "documentation": {}
+    },
+    {
+        "label": "route_default",
+        "kind": 2,
+        "importPath": "apps.home.routes",
+        "description": "apps.home.routes",
+        "peekOfCode": "def route_default():\n    return redirect('/index')\n@blueprint.route('/index')\ndef index():\n    return render_template('home/index.html', segment='index')\n@blueprint.route('/<template>')\n@login_required\ndef route_template(template):\n    try:\n        if not template.endswith('.html'):",
+        "detail": "apps.home.routes",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 2,
+        "importPath": "apps.home.routes",
+        "description": "apps.home.routes",
+        "peekOfCode": "def index():\n    return render_template('home/index.html', segment='index')\n@blueprint.route('/<template>')\n@login_required\ndef route_template(template):\n    try:\n        if not template.endswith('.html'):\n            template += '.html'\n        # Detect the current page\n        segment = get_segment(request)",
+        "detail": "apps.home.routes",
+        "documentation": {}
+    },
+    {
+        "label": "route_template",
+        "kind": 2,
+        "importPath": "apps.home.routes",
+        "description": "apps.home.routes",
+        "peekOfCode": "def route_template(template):\n    try:\n        if not template.endswith('.html'):\n            template += '.html'\n        # Detect the current page\n        segment = get_segment(request)\n        # Serve the file (if exists) from app/templates/home/FILE.html\n        return render_template(\"home/\" + template, segment=segment)\n    except TemplateNotFound:\n        return render_template('home/page-404.html'), 404",
+        "detail": "apps.home.routes",
+        "documentation": {}
+    },
+    {
+        "label": "get_segment",
+        "kind": 2,
+        "importPath": "apps.home.routes",
+        "description": "apps.home.routes",
+        "peekOfCode": "def get_segment(request):\n    try:\n        segment = request.path.split('/')[-1]\n        if segment == '':\n            segment = 'index'\n        return segment\n    except:\n        return None",
+        "detail": "apps.home.routes",
+        "documentation": {}
+    },
+    {
+        "label": "Config",
+        "kind": 6,
+        "importPath": "apps.config",
+        "description": "apps.config",
+        "peekOfCode": "class Config(object):\n    basedir = os.path.abspath(os.path.dirname(__file__))\n    # Set up the App SECRET_KEY\n    # SECRET_KEY = config('SECRET_KEY'  , default='S#perS3crEt_007')\n    SECRET_KEY = os.getenv('SECRET_KEY', 'S#perS3crEt_007')\n    # This will create a file in <app> FOLDER\n    SQLALCHEMY_DATABASE_URI = 'sql:///' + os.path.join(basedir, 'db.sql')\n    SQLALCHEMY_TRACK_MODIFICATIONS = False \n    # Assets Management\n    ASSETS_ROOT = os.getenv('ASSETS_ROOT', '/static/assets')    ",
+        "detail": "apps.config",
+        "documentation": {}
+    },
+    {
+        "label": "ProductionConfig",
+        "kind": 6,
+        "importPath": "apps.config",
+        "description": "apps.config",
+        "peekOfCode": "class ProductionConfig(Config):\n    DEBUG = True\n    # Security\n    SESSION_COOKIE_HTTPONLY = True\n    REMEMBER_COOKIE_HTTPONLY = True\n    REMEMBER_COOKIE_DURATION = 3600\n    # PostgreSQL database\n    SQLALCHEMY_DATABASE_URI = '{}://{}:{}@{}:{}/{}'.format(\n        os.getenv('DB_ENGINE'   , 'mysql'),\n        os.getenv('DB_USERNAME' , 'root'),",
+        "detail": "apps.config",
+        "documentation": {}
+    },
+    {
+        "label": "DebugConfig",
+        "kind": 6,
+        "importPath": "apps.config",
+        "description": "apps.config",
+        "peekOfCode": "class DebugConfig(Config):\n    DEBUG = False\n# Load all possible configurations\nconfig_dict = {\n    'Production': ProductionConfig,\n    'Debug'     : DebugConfig\n}",
+        "detail": "apps.config",
+        "documentation": {}
+    },
+    {
+        "label": "config_dict",
+        "kind": 5,
+        "importPath": "apps.config",
+        "description": "apps.config",
+        "peekOfCode": "config_dict = {\n    'Production': ProductionConfig,\n    'Debug'     : DebugConfig\n}",
+        "detail": "apps.config",
+        "documentation": {}
+    },
+    {
+        "label": "DEBUG",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "DEBUG = (os.getenv('DEBUG', 'False') == 'True')\n# The configuration\nget_config_mode = 'Debug' if DEBUG else 'Production'\ntry:\n    # Load the configuration using the default values\n    app_config = config_dict[get_config_mode.capitalize()]\nexcept KeyError:\n    exit('Error: Invalid <config_mode>. Expected values [Debug, Production] ')\napp = create_app(app_config)\nMigrate(app, db)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "get_config_mode",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "get_config_mode = 'Debug' if DEBUG else 'Production'\ntry:\n    # Load the configuration using the default values\n    app_config = config_dict[get_config_mode.capitalize()]\nexcept KeyError:\n    exit('Error: Invalid <config_mode>. Expected values [Debug, Production] ')\napp = create_app(app_config)\nMigrate(app, db)\nif DEBUG:\n    app.logger.info('DEBUG       = ' + str(DEBUG)             )",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app = create_app(app_config)\nMigrate(app, db)\nif DEBUG:\n    app.logger.info('DEBUG       = ' + str(DEBUG)             )\n    app.logger.info('DBMS        = ' + app_config.SQLALCHEMY_DATABASE_URI)\n    app.logger.info('ASSETS_ROOT = ' + app_config.ASSETS_ROOT )\nif __name__ == \"__main__\":\n    app.run(\"0.0.0.0\")",
+        "detail": "app",
+        "documentation": {}
+    }
+]
