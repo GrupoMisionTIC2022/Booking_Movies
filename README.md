@@ -79,7 +79,7 @@ $ set FLASK_APP=run.py
 $ set FLASK_ENV=development
 $
 $ # Powershell
-$ $env:FLASK_APP = ".\run.py"
+$ $env:FLASK_APP = ".\app.py"
 $ $env:FLASK_ENV = "development"
 ```
 
