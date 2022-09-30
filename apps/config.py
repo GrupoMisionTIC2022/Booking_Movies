@@ -28,7 +28,7 @@ class ProductionConfig(Config):
     # PostgreSQL database
     SQLALCHEMY_DATABASE_URI = '{}://{}:{}@{}:{}/{}'.format(
         os.getenv('DB_ENGINE'   , 'mysql'),
-        os.getenv('DB_USERNAME' , 'root'),
+        os.getenv('DB_USERNAME' , 'admin'),
         os.getenv('DB_PASS'     , '10271995'),
         os.getenv('DB_HOST'     , 'localhost'),
         os.getenv('DB_PORT'     , 3306),

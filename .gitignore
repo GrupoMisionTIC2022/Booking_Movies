@@ -1,0 +1,10 @@
+apps/config.py
+apps/__pycache__/__init__.cpython-310.pyc
+apps/__pycache__/config.cpython-310.pyc
+apps/authentication/__pycache__/__init__.cpython-310.pyc
+apps/authentication/__pycache__/forms.cpython-310.pyc
+apps/authentication/__pycache__/models.cpython-310.pyc
+apps/authentication/__pycache__/routes.cpython-310.pyc
+apps/authentication/__pycache__/util.cpython-310.pyc
+apps/home/__pycache__/__init__.cpython-310.pyc
+apps/home/__pycache__/routes.cpython-310.pyc
