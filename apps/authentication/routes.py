@@ -130,6 +130,8 @@ def submitmoduser():
     username = request.form['username']
     user = Users.query.filter_by(username=current_user.username).first()
     user.username=username
+    cond=InfoUser.query.filter_by(username=username).first() 
+    cond.username=username
     db.session.commit()
     return redirect("/settings.html")
 

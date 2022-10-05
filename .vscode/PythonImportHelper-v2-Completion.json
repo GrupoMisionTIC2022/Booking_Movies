@@ -484,7 +484,7 @@
         "kind": 2,
         "importPath": "apps.authentication.routes",
         "description": "apps.authentication.routes",
-        "peekOfCode": "def logout():\n    logout_user()\n    return redirect(url_for('authentication_blueprint.login'))\n@blueprint.route('/moduser', methods=['GET', 'POST'])\ndef submitmoduser():\n    username = request.form['username']\n    user = Users.query.filter_by(username=current_user.username).first()\n    user.username=username\n    db.session.commit()\n    return redirect(\"/settings.html\")",
+        "peekOfCode": "def logout():\n    logout_user()\n    return redirect(url_for('authentication_blueprint.login'))\n@blueprint.route('/moduser', methods=['GET', 'POST'])\ndef submitmoduser():\n    username = request.form['username']\n    user = Users.query.filter_by(username=current_user.username).first()\n    user.username=username\n    cond=InfoUser.query.filter_by(username=username).first() \n    cond.username=username",
         "detail": "apps.authentication.routes",
         "documentation": {}
     },
@@ -493,7 +493,7 @@
         "kind": 2,
         "importPath": "apps.authentication.routes",
         "description": "apps.authentication.routes",
-        "peekOfCode": "def submitmoduser():\n    username = request.form['username']\n    user = Users.query.filter_by(username=current_user.username).first()\n    user.username=username\n    db.session.commit()\n    return redirect(\"/settings.html\")\n@blueprint.route('/modpassword', methods=['GET', 'POST'])\ndef submitmodpass():\n    password = request.form['password']\n    user = Users.query.filter_by(username=current_user.username).first()",
+        "peekOfCode": "def submitmoduser():\n    username = request.form['username']\n    user = Users.query.filter_by(username=current_user.username).first()\n    user.username=username\n    cond=InfoUser.query.filter_by(username=username).first() \n    cond.username=username\n    db.session.commit()\n    return redirect(\"/settings.html\")\n@blueprint.route('/modpassword', methods=['GET', 'POST'])\ndef submitmodpass():",
         "detail": "apps.authentication.routes",
         "documentation": {}
     },
