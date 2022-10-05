@@ -102,8 +102,14 @@ def submitinfouser():
 
     cond=InfoUser.query.filter_by(username=username).first() 
     if cond:
-        id=cond.id
-        info=InfoUser(id=id,username=username,
+        cond.frist_name=first_name
+        cond.last_name=last_name
+        cond.birthday=birthday
+        cond.gender=gender
+        cond.email=email
+        cond.phone=phone
+    else:     
+        info=InfoUser(username=username,
                   frist_name=first_name,
                   last_name=last_name,
                   birthday=birthday,
@@ -111,14 +117,6 @@ def submitinfouser():
                   email=email,
                   phone=phone)
         db.session.add(info)
-    else:     
-        cond.frist_name=first_name
-        cond.last_name=last_name
-        cond.birthday=birthday
-        cond.gender=gender
-        cond.email=email
-        cond.phone=phone
-    
     db.session.commit()
     return  redirect("/tabla_pelis.html")
     
