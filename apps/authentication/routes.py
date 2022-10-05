@@ -110,15 +110,15 @@ def submitinfouser():
                   gender=gender,
                   email=email,
                   phone=phone)
+        db.session.add(info)
     else:     
-        info=InfoUser(username=username,
-                  frist_name=first_name,
-                  last_name=last_name,
-                  birthday=birthday,
-                  gender=gender,
-                  email=email,
-                  phone=phone)
-    db.session.add(info)
+        cond.frist_name=first_name
+        cond.last_name=last_name
+        cond.birthday=birthday
+        cond.gender=gender
+        cond.email=email
+        cond.phone=phone
+    
     db.session.commit()
     return  redirect("/tabla_pelis.html")
     
