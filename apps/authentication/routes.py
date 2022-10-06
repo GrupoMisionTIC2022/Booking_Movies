@@ -12,7 +12,7 @@ from flask_dance.contrib.github import github
 from apps import db, login_manager
 from apps.authentication import blueprint
 from apps.authentication.forms import LoginForm, CreateAccountForm
-from apps.authentication.models import Users,InfoUser,ImageUser
+from apps.authentication.models import Users,InfoUser,ImageUser,ImageUsercover
 
 from apps.authentication.util import verify_pass
 
@@ -134,10 +134,14 @@ def submitmoduser():
     if cond:
         cond.username=username
     user = Users.query.filter_by(username=current_user.username).first()
-    user.username=username
     user1 = ImageUser.query.filter_by(username=current_user.username).first()
     if user1:
         user1.username=username
+    user2 = ImageUsercover.query.filter_by(username=current_user.username).first()
+    if user2:
+        user2.username=username
+    user.username=username
+   
     
 
     db.session.commit()
@@ -188,9 +192,12 @@ def selec_userinf():
 def deleteuser():
     user = Users.query.filter_by(username=current_user.username).first()
     user1 = InfoUser.query.filter_by(username=current_user.username).first()
+    user2=ImageUser.query.filter_by(username=current_user.username).first()
     db.session.delete(user)
     if user1:
         db.session.delete(user1)
+    if user2:
+        db.session.delete(user2)
     db.session.commit()
     logout_user
     return redirect(url_for('home_blueprint.index'))    
@@ -205,18 +212,21 @@ def decode_picture(data):
 def registrarimagenuser():
     file = request.files['avatar']
     ext = pathlib.Path(file.filename).suffix
-    ext=ext.replace('.', '')
-    data = file.read()
-    avatar= render_picture(data)
-    username = current_user.username
-    user1 = ImageUser.query.filter_by(username=current_user.username).first()
-    if user1:
-        user1.avatar=avatar
-        user1.formato=ext
+    if ext=="":
+        None
     else:
-        user=ImageUser(avatar=avatar,username=username,formato=ext)
-        db.session.add(user)
-    db.session.commit()
+        ext=ext.replace('.', '')
+        data = file.read()
+        avatar= render_picture(data)
+        username = current_user.username
+        user1 = ImageUser.query.filter_by(username=current_user.username).first()
+        if user1:
+            user1.avatar=avatar
+            user1.formato=ext
+        else:
+            user=ImageUser(avatar=avatar,username=username,formato=ext)
+            db.session.add(user)
+        db.session.commit()
   
 
     return redirect("/settings.html")  
@@ -228,4 +238,24 @@ def deleteimageperfil():
         db.session.delete(user)
         db.session.commit()
     return redirect("/settings.html")
+@blueprint.route("/regisimagencover", methods=['GET', 'POST'])   
+def registrarimagencover():
+    file = request.files['cover']
+    ext = pathlib.Path(file.filename).suffix
+    if ext=="":
+        None
+    else:
+        ext=ext.replace('.', '')
+        data = file.read()
+        cover= render_picture(data)
+        username = current_user.username
+        user1 = ImageUsercover.query.filter_by(username=current_user.username).first()
+        if user1:
+            user1.cover=cover
+            user1.formato=ext
+        else:
+            user=ImageUsercover(cover=cover,username=username,formato=ext)
+            db.session.add(user)
+        db.session.commit()   
+    return redirect("/settings.html") 
     

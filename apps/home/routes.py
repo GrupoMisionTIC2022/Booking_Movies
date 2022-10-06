@@ -2,7 +2,7 @@ from apps.home import blueprint
 from flask import render_template, request,redirect
 from flask_login import login_required
 from jinja2 import TemplateNotFound
-from apps.authentication.models import InfoUser,ImageUser
+from apps.authentication.models import InfoUser,ImageUser,ImageUsercover
 from flask_login import current_user
 from PIL import Image
 import base64 
@@ -31,11 +31,20 @@ def selec_useravatar():
     user = ImageUser.query.filter_by(username=current_user.username).first()
     if user:
         
-        return 'data:image/{};base64,{}'.format(user.formato,user.avatar)
+        return 'data:image/{};base64,{}'.format((user.formato).lower(),user.avatar)
     else:
         
          
         return "/static/assets/img/team/profile-picture-3.jpg"
+def selec_usercover():
+    user = ImageUsercover.query.filter_by(username=current_user.username).first()
+    if user:
+        
+        return 'data:image/{};base64,{}'.format((user.formato).lower(),user.cover)
+    else:
+        
+         
+        return "/static/assets/img/profile-cover.jpg"
         
 @blueprint.route('/')
 def route_default():
@@ -63,7 +72,7 @@ def route_template(template):
         # Serve the file (if exists) from app/templates/home/FILE.html
       
         
-        return render_template("home/" + template, segment=segment,info=selec_userinf(),infoimage=selec_useravatar())
+        return render_template("home/" + template, segment=segment,info=selec_userinf(),infoimage=selec_useravatar(),infocover=selec_usercover())
         
 
     except TemplateNotFound:
