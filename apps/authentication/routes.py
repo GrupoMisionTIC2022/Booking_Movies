@@ -220,3 +220,12 @@ def registrarimagenuser():
   
 
     return redirect("/settings.html")  
+
+@blueprint.route("/deleimageperfil", methods=['GET', 'POST'])
+def deleteimageperfil():
+    user=ImageUser.query.filter_by(username=current_user.username).first()
+    if user:
+        db.session.delete(user)
+        db.session.commit()
+    return redirect("/settings.html")
+    

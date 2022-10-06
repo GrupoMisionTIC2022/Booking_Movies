@@ -629,6 +629,15 @@
         "documentation": {}
     },
     {
+        "label": "deleteimageperfil",
+        "kind": 2,
+        "importPath": "apps.authentication.routes",
+        "description": "apps.authentication.routes",
+        "peekOfCode": "def deleteimageperfil():\n    user=ImageUser.query.filter_by(username=current_user.username).first()\n    if user:\n        db.session.delete(user)\n        db.session.commit()\n    return redirect(\"/settings.html\")",
+        "detail": "apps.authentication.routes",
+        "documentation": {}
+    },
+    {
         "label": "hash_pass",
         "kind": 2,
         "importPath": "apps.authentication.util",
