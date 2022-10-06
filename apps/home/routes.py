@@ -2,10 +2,17 @@ from apps.home import blueprint
 from flask import render_template, request,redirect
 from flask_login import login_required
 from jinja2 import TemplateNotFound
-from apps.authentication.models import InfoUser
+from apps.authentication.models import InfoUser,ImageUser
 from flask_login import current_user
+from PIL import Image
+import base64 
+from io import StringIO 
 
 
+
+def decode_picture(data):
+    decodepic=data.decode('ascii')
+    return decodepic
 
 def selec_userinf():
     user = InfoUser.query.filter_by(username=current_user.username).first()
@@ -20,7 +27,15 @@ def selec_userinf():
         user["email"]=""
         user["phone"]=""
         return user
+def selec_useravatar():
+    user = ImageUser.query.filter_by(username=current_user.username).first()
+    if user:
         
+        return 'data:image/{};base64,{}'.format(user.formato,user.avatar)
+    else:
+        
+         
+        return "/static/assets/img/team/profile-picture-3.jpg"
         
 @blueprint.route('/')
 def route_default():
@@ -46,10 +61,10 @@ def route_template(template):
         segment = get_segment(request)
 
         # Serve the file (if exists) from app/templates/home/FILE.html
-        if "home/" + template=="home/settings.html":
-            return render_template("home/" + template, segment=segment,info=selec_userinf())
-        else:
-            return render_template("home/" + template, segment=segment)
+      
+        
+        return render_template("home/" + template, segment=segment,info=selec_userinf(),infoimage=selec_useravatar())
+        
 
     except TemplateNotFound:
         return render_template('home/page-404.html'), 404

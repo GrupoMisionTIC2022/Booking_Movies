@@ -241,6 +241,15 @@
         "documentation": {}
     },
     {
+        "label": "pathlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
         "label": "github",
         "importPath": "flask_dance.contrib.github",
         "description": "flask_dance.contrib.github",
@@ -289,7 +298,23 @@
         "documentation": {}
     },
     {
+        "label": "ImageUser",
+        "importPath": "apps.authentication.models",
+        "description": "apps.authentication.models",
+        "isExtraImport": true,
+        "detail": "apps.authentication.models",
+        "documentation": {}
+    },
+    {
         "label": "InfoUser",
+        "importPath": "apps.authentication.models",
+        "description": "apps.authentication.models",
+        "isExtraImport": true,
+        "detail": "apps.authentication.models",
+        "documentation": {}
+    },
+    {
+        "label": "ImageUser",
         "importPath": "apps.authentication.models",
         "description": "apps.authentication.models",
         "isExtraImport": true,
@@ -337,6 +362,22 @@
         "description": "jinja2",
         "isExtraImport": true,
         "detail": "jinja2",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "StringIO",
+        "importPath": "io",
+        "description": "io",
+        "isExtraImport": true,
+        "detail": "io",
         "documentation": {}
     },
     {
@@ -403,7 +444,7 @@
         "kind": 6,
         "importPath": "apps.authentication.models",
         "description": "apps.authentication.models",
-        "peekOfCode": "class ImageUser(db.Model):\n    id            = db.Column(db.Integer, primary_key=True)\n    username      = db.Column(db.String(64), unique=True)\n    avatar        = db.Column(db.LargeBinary, nullable=False)\nclass ImageUsercover(db.Model):\n    id            = db.Column(db.Integer, primary_key=True)\n    username      = db.Column(db.String(64), unique=True)\n    avatar        = db.Column(db.LargeBinary, nullable=False)\nclass Users(db.Model, UserMixin):\n    __tablename__ = 'Users'",
+        "peekOfCode": "class ImageUser(db.Model):\n    id            = db.Column(db.Integer, primary_key=True)\n    username      = db.Column(db.String(64), unique=True)\n    avatar        = db.Column(db.Text, nullable=False)\n    formato       = db.Column(db.String(64), unique=True) \nclass ImageUsercover(db.Model):\n    id            = db.Column(db.Integer, primary_key=True)\n    username      = db.Column(db.String(64), unique=True)\n    cover         = db.Column(db.LargeBinary, nullable=False)\n    formato       = db.Column(db.String(64), unique=True) ",
         "detail": "apps.authentication.models",
         "documentation": {}
     },
@@ -412,7 +453,7 @@
         "kind": 6,
         "importPath": "apps.authentication.models",
         "description": "apps.authentication.models",
-        "peekOfCode": "class ImageUsercover(db.Model):\n    id            = db.Column(db.Integer, primary_key=True)\n    username      = db.Column(db.String(64), unique=True)\n    avatar        = db.Column(db.LargeBinary, nullable=False)\nclass Users(db.Model, UserMixin):\n    __tablename__ = 'Users'\n    id            = db.Column(db.Integer, primary_key=True)\n    username      = db.Column(db.String(64), unique=True)\n    email         = db.Column(db.String(64), unique=True)\n    password      = db.Column(db.LargeBinary)",
+        "peekOfCode": "class ImageUsercover(db.Model):\n    id            = db.Column(db.Integer, primary_key=True)\n    username      = db.Column(db.String(64), unique=True)\n    cover         = db.Column(db.LargeBinary, nullable=False)\n    formato       = db.Column(db.String(64), unique=True) \nclass Users(db.Model, UserMixin):\n    __tablename__ = 'Users'\n    id            = db.Column(db.Integer, primary_key=True)\n    username      = db.Column(db.String(64), unique=True)\n    email         = db.Column(db.String(64), unique=True)",
         "detail": "apps.authentication.models",
         "documentation": {}
     },
@@ -475,7 +516,7 @@
         "kind": 2,
         "importPath": "apps.authentication.routes",
         "description": "apps.authentication.routes",
-        "peekOfCode": "def submitinfouser():\n    username      = str(current_user.username)\n    first_name    = str(request.form[\"first_name\"])\n    last_name     = str(request.form[\"last_name\"])\n    birthday      = str(request.form[\"birthday\"])\n    gender        = str(request.form[\"gender\"])\n    email         = str(request.form[\"email\"])\n    phone         = int(request.form[\"phone\"])\n    cond=InfoUser.query.filter_by(username=username).first() \n    if cond:",
+        "peekOfCode": "def submitinfouser():\n    username      = current_user.username\n    first_name    = str(request.form[\"first_name\"])\n    last_name     = str(request.form[\"last_name\"])\n    birthday      = str(request.form[\"birthday\"])\n    gender        = str(request.form[\"gender\"])\n    email         = str(request.form[\"email\"])\n    phone         = int(request.form[\"phone\"])\n    cond=InfoUser.query.filter_by(username=username).first() \n    if cond:",
         "detail": "apps.authentication.routes",
         "documentation": {}
     },
@@ -484,7 +525,7 @@
         "kind": 2,
         "importPath": "apps.authentication.routes",
         "description": "apps.authentication.routes",
-        "peekOfCode": "def logout():\n    logout_user()\n    return redirect(url_for('authentication_blueprint.login'))\n@blueprint.route('/moduser', methods=['GET', 'POST'])\ndef submitmoduser():\n    username = request.form['username']\n    user = Users.query.filter_by(username=current_user.username).first()\n    user.username=username\n    cond=InfoUser.query.filter_by(username=username).first() \n    cond.username=username",
+        "peekOfCode": "def logout():\n    logout_user()\n    return redirect(url_for('authentication_blueprint.login'))\n@blueprint.route('/moduser', methods=['GET', 'POST'])\ndef submitmoduser():\n    username = request.form['username']\n    cond=InfoUser.query.filter_by(username=current_user.username).first()\n    if cond:\n        cond.username=username\n    user = Users.query.filter_by(username=current_user.username).first()",
         "detail": "apps.authentication.routes",
         "documentation": {}
     },
@@ -493,7 +534,7 @@
         "kind": 2,
         "importPath": "apps.authentication.routes",
         "description": "apps.authentication.routes",
-        "peekOfCode": "def submitmoduser():\n    username = request.form['username']\n    user = Users.query.filter_by(username=current_user.username).first()\n    user.username=username\n    cond=InfoUser.query.filter_by(username=username).first() \n    cond.username=username\n    db.session.commit()\n    return redirect(\"/settings.html\")\n@blueprint.route('/modpassword', methods=['GET', 'POST'])\ndef submitmodpass():",
+        "peekOfCode": "def submitmoduser():\n    username = request.form['username']\n    cond=InfoUser.query.filter_by(username=current_user.username).first()\n    if cond:\n        cond.username=username\n    user = Users.query.filter_by(username=current_user.username).first()\n    user.username=username\n    user1 = ImageUser.query.filter_by(username=current_user.username).first()\n    if user1:\n        user1.username=username",
         "detail": "apps.authentication.routes",
         "documentation": {}
     },
@@ -552,6 +593,42 @@
         "documentation": {}
     },
     {
+        "label": "deleteuser",
+        "kind": 2,
+        "importPath": "apps.authentication.routes",
+        "description": "apps.authentication.routes",
+        "peekOfCode": "def deleteuser():\n    user = Users.query.filter_by(username=current_user.username).first()\n    user1 = InfoUser.query.filter_by(username=current_user.username).first()\n    db.session.delete(user)\n    if user1:\n        db.session.delete(user1)\n    db.session.commit()\n    logout_user\n    return redirect(url_for('home_blueprint.index'))    \ndef render_picture(data):",
+        "detail": "apps.authentication.routes",
+        "documentation": {}
+    },
+    {
+        "label": "render_picture",
+        "kind": 2,
+        "importPath": "apps.authentication.routes",
+        "description": "apps.authentication.routes",
+        "peekOfCode": "def render_picture(data):\n    render_pic = base64.b64encode(data).decode('ascii') \n    return render_pic \ndef decode_picture(data):\n    decodepic=data.decode('ascii')\n    return decodepic\n@blueprint.route(\"/regisuserimage\", methods=['GET', 'POST'])\ndef registrarimagenuser():\n    file = request.files['avatar']\n    ext = pathlib.Path(file.filename).suffix",
+        "detail": "apps.authentication.routes",
+        "documentation": {}
+    },
+    {
+        "label": "decode_picture",
+        "kind": 2,
+        "importPath": "apps.authentication.routes",
+        "description": "apps.authentication.routes",
+        "peekOfCode": "def decode_picture(data):\n    decodepic=data.decode('ascii')\n    return decodepic\n@blueprint.route(\"/regisuserimage\", methods=['GET', 'POST'])\ndef registrarimagenuser():\n    file = request.files['avatar']\n    ext = pathlib.Path(file.filename).suffix\n    ext=ext.replace('.', '')\n    data = file.read()\n    avatar= render_picture(data)",
+        "detail": "apps.authentication.routes",
+        "documentation": {}
+    },
+    {
+        "label": "registrarimagenuser",
+        "kind": 2,
+        "importPath": "apps.authentication.routes",
+        "description": "apps.authentication.routes",
+        "peekOfCode": "def registrarimagenuser():\n    file = request.files['avatar']\n    ext = pathlib.Path(file.filename).suffix\n    ext=ext.replace('.', '')\n    data = file.read()\n    avatar= render_picture(data)\n    username = current_user.username\n    user1 = ImageUser.query.filter_by(username=current_user.username).first()\n    if user1:\n        user1.avatar=avatar",
+        "detail": "apps.authentication.routes",
+        "documentation": {}
+    },
+    {
         "label": "hash_pass",
         "kind": 2,
         "importPath": "apps.authentication.util",
@@ -570,11 +647,29 @@
         "documentation": {}
     },
     {
+        "label": "decode_picture",
+        "kind": 2,
+        "importPath": "apps.home.routes",
+        "description": "apps.home.routes",
+        "peekOfCode": "def decode_picture(data):\n    decodepic=data.decode('ascii')\n    return decodepic\ndef selec_userinf():\n    user = InfoUser.query.filter_by(username=current_user.username).first()\n    if user:\n        return user\n    else:\n        user={}\n        user[\"frist_name\"]=current_user.username",
+        "detail": "apps.home.routes",
+        "documentation": {}
+    },
+    {
         "label": "selec_userinf",
         "kind": 2,
         "importPath": "apps.home.routes",
         "description": "apps.home.routes",
         "peekOfCode": "def selec_userinf():\n    user = InfoUser.query.filter_by(username=current_user.username).first()\n    if user:\n        return user\n    else:\n        user={}\n        user[\"frist_name\"]=current_user.username\n        user[\"last_name\"]=\"\"\n        user[\"birthday\"]=\"\"\n        user[\"gender\"]=\"\"",
+        "detail": "apps.home.routes",
+        "documentation": {}
+    },
+    {
+        "label": "selec_useravatar",
+        "kind": 2,
+        "importPath": "apps.home.routes",
+        "description": "apps.home.routes",
+        "peekOfCode": "def selec_useravatar():\n    user = ImageUser.query.filter_by(username=current_user.username).first()\n    if user:\n        return 'data:image/{};base64,{}'.format(user.formato,user.avatar)\n    else:\n        return \"/static/assets/img/team/profile-picture-3.jpg\"\n@blueprint.route('/')\ndef route_default():\n    return redirect('/index')\n@blueprint.route('/index')",
         "detail": "apps.home.routes",
         "documentation": {}
     },
@@ -601,7 +696,7 @@
         "kind": 2,
         "importPath": "apps.home.routes",
         "description": "apps.home.routes",
-        "peekOfCode": "def route_template(template):\n    try:\n        if not template.endswith('.html'):\n            template += '.html'\n        # Detect the current page\n        segment = get_segment(request)\n        # Serve the file (if exists) from app/templates/home/FILE.html\n        if \"home/\" + template==\"home/settings.html\":\n            return render_template(\"home/\" + template, segment=segment,info=selec_userinf())\n        else:",
+        "peekOfCode": "def route_template(template):\n    try:\n        if not template.endswith('.html'):\n            template += '.html'\n        # Detect the current page\n        segment = get_segment(request)\n        # Serve the file (if exists) from app/templates/home/FILE.html\n        return render_template(\"home/\" + template, segment=segment,info=selec_userinf(),infoimage=selec_useravatar())\n    except TemplateNotFound:\n        return render_template('home/page-404.html'), 404",
         "detail": "apps.home.routes",
         "documentation": {}
     },

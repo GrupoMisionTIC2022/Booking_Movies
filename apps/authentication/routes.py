@@ -1,5 +1,6 @@
 
 from flask import render_template, redirect, request, url_for
+import pathlib
 from flask_login import (
     current_user,
     login_user,
@@ -11,11 +12,11 @@ from flask_dance.contrib.github import github
 from apps import db, login_manager
 from apps.authentication import blueprint
 from apps.authentication.forms import LoginForm, CreateAccountForm
-from apps.authentication.models import Users,InfoUser
+from apps.authentication.models import Users,InfoUser,ImageUser
 
 from apps.authentication.util import verify_pass
 
-
+import base64
 
 
 # Login & Registration
@@ -92,7 +93,7 @@ def register():
 
 @blueprint.route('/infouser', methods=['GET', 'POST'])
 def submitinfouser():
-    username      = str(current_user.username)
+    username      = current_user.username
     first_name    = str(request.form["first_name"])
     last_name     = str(request.form["last_name"])
     birthday      = str(request.form["birthday"])
@@ -102,6 +103,7 @@ def submitinfouser():
 
     cond=InfoUser.query.filter_by(username=username).first() 
     if cond:
+        cond.username=username
         cond.frist_name=first_name
         cond.last_name=last_name
         cond.birthday=birthday
@@ -118,7 +120,7 @@ def submitinfouser():
                   phone=phone)
         db.session.add(info)
     db.session.commit()
-    return  redirect("/tabla_pelis.html")
+    return redirect("/settings.html")
     
 @blueprint.route('/logout')
 def logout():
@@ -128,10 +130,16 @@ def logout():
 @blueprint.route('/moduser', methods=['GET', 'POST'])
 def submitmoduser():
     username = request.form['username']
+    cond=InfoUser.query.filter_by(username=current_user.username).first()
+    if cond:
+        cond.username=username
     user = Users.query.filter_by(username=current_user.username).first()
     user.username=username
-    cond=InfoUser.query.filter_by(username=username).first() 
-    cond.username=username
+    user1 = ImageUser.query.filter_by(username=current_user.username).first()
+    if user1:
+        user1.username=username
+    
+
     db.session.commit()
     return redirect("/settings.html")
 
@@ -176,5 +184,39 @@ def selec_userinf():
         user["email"]=""
         user["phone"]=""
         return user
-        
-        
+@blueprint.route("/deleteuser", methods=['GET', 'POST'])        
+def deleteuser():
+    user = Users.query.filter_by(username=current_user.username).first()
+    user1 = InfoUser.query.filter_by(username=current_user.username).first()
+    db.session.delete(user)
+    if user1:
+        db.session.delete(user1)
+    db.session.commit()
+    logout_user
+    return redirect(url_for('home_blueprint.index'))    
+def render_picture(data):
+
+    render_pic = base64.b64encode(data).decode('ascii') 
+    return render_pic 
+def decode_picture(data):
+    decodepic=data.decode('ascii')
+    return decodepic
+@blueprint.route("/regisuserimage", methods=['GET', 'POST'])
+def registrarimagenuser():
+    file = request.files['avatar']
+    ext = pathlib.Path(file.filename).suffix
+    ext=ext.replace('.', '')
+    data = file.read()
+    avatar= render_picture(data)
+    username = current_user.username
+    user1 = ImageUser.query.filter_by(username=current_user.username).first()
+    if user1:
+        user1.avatar=avatar
+        user1.formato=ext
+    else:
+        user=ImageUser(avatar=avatar,username=username,formato=ext)
+        db.session.add(user)
+    db.session.commit()
+  
+
+    return redirect("/settings.html")  

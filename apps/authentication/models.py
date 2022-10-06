@@ -29,14 +29,16 @@ class ImageUser(db.Model):
     
     id            = db.Column(db.Integer, primary_key=True)
     username      = db.Column(db.String(64), unique=True)
-    avatar        = db.Column(db.LargeBinary, nullable=False)
+    avatar        = db.Column(db.Text, nullable=False)
+    formato       = db.Column(db.String(64), unique=True) 
 
 
 class ImageUsercover(db.Model):
     
     id            = db.Column(db.Integer, primary_key=True)
     username      = db.Column(db.String(64), unique=True)
-    avatar        = db.Column(db.LargeBinary, nullable=False)
+    cover         = db.Column(db.LargeBinary, nullable=False)
+    formato       = db.Column(db.String(64), unique=True) 
     
 class Users(db.Model, UserMixin):
 
