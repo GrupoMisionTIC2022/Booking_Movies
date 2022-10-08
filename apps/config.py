@@ -9,7 +9,7 @@ class Config(object):
     SECRET_KEY = os.getenv('SECRET_KEY', 'S#perS3crEt_007')
 
     # This will create a file in <app> FOLDER
-    SQLALCHEMY_DATABASE_URI = 'sql:///' + os.path.join(basedir, 'db.sql')
+    SQLALCHEMY_DATABASE_URI ="postgres://iqqemzfsythoou:694b4875b438ee27529cf2b358c02e3e92088f50ae27acfeee5f897b6d014ff7@ec2-52-204-157-26.compute-1.amazonaws.com:5432/dfuo4sb2tepsc5"
     SQLALCHEMY_TRACK_MODIFICATIONS = False 
 
     # Assets Management
@@ -27,12 +27,12 @@ class ProductionConfig(Config):
 
     # PostgreSQL database
     SQLALCHEMY_DATABASE_URI = '{}://{}:{}@{}:{}/{}'.format(
-        os.getenv('DB_ENGINE'   , 'mysql'),
-        os.getenv('DB_USERNAME' , 'root'),
-        os.getenv('DB_PASS'     , '10271995'),
-        os.getenv('DB_HOST'     , 'localhost'),
-        os.getenv('DB_PORT'     , 3306),
-        os.getenv('DB_NAME'     , 'db')
+        os.getenv('DB_ENGINE'   , 'postgresql'),
+        os.getenv('DB_USERNAME' , 'iqqemzfsythoou'),
+        os.getenv('DB_PASS'     , '694b4875b438ee27529cf2b358c02e3e92088f50ae27acfeee5f897b6d014ff7'),
+        os.getenv('DB_HOST'     , 'ec2-52-204-157-26.compute-1.amazonaws.com'),
+        os.getenv('DB_PORT'     , 5432),
+        os.getenv('DB_NAME'     , 'dfuo4sb2tepsc5')
     ) 
 
 class DebugConfig(Config):
