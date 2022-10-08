@@ -381,19 +381,12 @@
         "documentation": {}
     },
     {
-        "label": "Image",
-        "importPath": "PIL",
-        "description": "PIL",
+        "label": "pandas",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "PIL",
-        "documentation": {}
-    },
-    {
-        "label": "StringIO",
-        "importPath": "io",
-        "description": "io",
-        "isExtraImport": true,
-        "detail": "io",
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
         "documentation": {}
     },
     {
@@ -739,7 +732,7 @@
         "kind": 2,
         "importPath": "apps.home.routes",
         "description": "apps.home.routes",
-        "peekOfCode": "def route_template(template):\n    try:\n        if not template.endswith('.html'):\n            template += '.html'\n        # Detect the current page\n        segment = get_segment(request)\n        # Serve the file (if exists) from app/templates/home/FILE.html\n        return render_template(\"home/\" + template, segment=segment,info=selec_userinf(),infoimage=selec_useravatar(),infocover=selec_usercover())\n    except TemplateNotFound:\n        return render_template('home/page-404.html'), 404",
+        "peekOfCode": "def route_template(template):\n    try:\n        if not template.endswith('.html'):\n            template += '.html'\n        # Detect the current page\n        segment = get_segment(request)\n        # Serve the file (if exists) from app/templates/home/FILE.html\n        return render_template(\"home/\" + template, segment=segment,info=selec_userinf(),infoimage=selec_useravatar(),infocover=selec_usercover(),tables=[csv.to_html()], titles=[''])\n    except TemplateNotFound:\n        return render_template('home/page-404.html'), 404",
         "detail": "apps.home.routes",
         "documentation": {}
     },

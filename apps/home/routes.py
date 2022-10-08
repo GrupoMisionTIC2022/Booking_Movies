@@ -4,12 +4,11 @@ from flask_login import login_required
 from jinja2 import TemplateNotFound
 from apps.authentication.models import InfoUser,ImageUser,ImageUsercover
 from flask_login import current_user
-from PIL import Image
-import base64 
-from io import StringIO 
+import pandas as pd
+import os
 
-
-
+csv=pd.read_csv("movie.csv")
+csv=csv.head(100)
 def decode_picture(data):
     decodepic=data.decode('ascii')
     return decodepic
@@ -72,7 +71,8 @@ def route_template(template):
         # Serve the file (if exists) from app/templates/home/FILE.html
       
         
-        return render_template("home/" + template, segment=segment,info=selec_userinf(),infoimage=selec_useravatar(),infocover=selec_usercover())
+        return render_template("home/" + template, segment=segment,info=selec_userinf(),infoimage=selec_useravatar(),infocover=selec_usercover(), column_names = csv.columns.values, row_data = list(csv.values.tolist()),
+   link_column = "Patient ID", zip = zip)
         
 
     except TemplateNotFound:
