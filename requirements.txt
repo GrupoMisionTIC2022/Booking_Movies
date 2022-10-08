@@ -15,3 +15,4 @@ Flask-Dance
 blinker
 pyOpenSSL
 flask_mysqldb
+pandas
