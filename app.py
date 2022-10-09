@@ -28,3 +28,6 @@ if DEBUG:
     app.logger.info('DBMS        = ' + app_config.SQLALCHEMY_DATABASE_URI)
     app.logger.info('ASSETS_ROOT = ' + app_config.ASSETS_ROOT )
 
+if __name__ == "__main__":
+    app.config["TEMPLATES_AUTO_RELOAD"] = True
+    app.run("0.0.0.0")
